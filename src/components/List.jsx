@@ -7,7 +7,7 @@ function ListTitle() {
 }
 
 function ListName({ data }) {
-  return <li key={data.id}>{data.name}</li>;
+  return <li className="title" key={data.id}>{data.name}</li>;
 }
 
 function List() {

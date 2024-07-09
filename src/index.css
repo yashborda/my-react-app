@@ -1,0 +1,45 @@
+.title {
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.card {
+  background-color: aliceblue;
+  width: 300px;
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+
+.card .card-title {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+.card .card-subtitle {
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+
+.form-control {
+  width: 300px;
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #000;
+}
+.btn {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.card .btn-danger {
+  background-color: red;
+  color: aliceblue;
+  border: none;
+  margin-left: auto;
+}

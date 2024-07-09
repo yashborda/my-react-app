@@ -14,7 +14,7 @@ function List() {
   return (
     <ul>
       {data.map((item) => (
-        <ListName data={item} />
+        <ListName key={item.id} data={item} />
         // <li key={item.id}>{item.name}</li>
       ))}
     </ul>

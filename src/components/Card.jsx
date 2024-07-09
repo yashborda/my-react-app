@@ -19,7 +19,7 @@ function Card({ item, setCards, setSubtitle, setTitle, setIseditId, cards }) {
         <button className="btn" onClick={handleEdit}>
           Edit
         </button>
-        <button className="btn btn-danger" onClick={handleDelete}>
+        <button style={{ marginLeft: "10px"}} className="btn btn-danger" onClick={handleDelete}>
           Delete
         </button>
       </div>

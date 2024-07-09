@@ -16,25 +16,24 @@ function App() {
       subtitle: "Card Subtitle 2",
     },
     {
-      id: 3,  
+      id: 3,
       name: "Card Title 3",
       subtitle: "Card Subtitle 3",
     },
   ];
-  const [cards, setCards] = useState(card); 
+  const [cards, setCards] = useState(card);
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [iseditId, setIseditId] = useState(null);
 
-
   const handelSubmit = (e) => {
     e.preventDefault();
-    cards.push({ name: title, subtitle: subtitle, id: cards.length + 1});
+    cards.push({ name: title, subtitle: subtitle, id: cards.length + 1 });
     setTitle("");
     setSubtitle("");
   };
 
-  const handelUpdate = (e) => { 
+  const handelUpdate = (e) => {
     e.preventDefault();
     const newCards = cards.map((card) => {
       if (card.id === iseditId) {
@@ -45,8 +44,8 @@ function App() {
     setCards(newCards);
     setTitle("");
     setSubtitle("");
-    setIseditId(null)
-  }
+    setIseditId(null);
+  };
   return (
     <>
       <Header />
@@ -73,20 +72,27 @@ function App() {
           required
         />{" "}
         <br />
-        {
-          iseditId ?
-<button className="btn" type="submit" onClick={handelUpdate}>
-          Update
-        </button>
-        :
-        <button className="btn" type="submit" onClick={handelSubmit}>
-        Add
-      </button>
-        }
+        {iseditId ? (
+          <button className="btn" type="submit" onClick={handelUpdate}>
+            Update
+          </button>
+        ) : (
+          <button className="btn" type="submit" onClick={handelSubmit}>
+            Add
+          </button>
+        )}
       </div>
-
+      <br />
       {cards.map((item) => (
-        <Card item={item} setCards={setCards} setSubtitle={setSubtitle} setTitle={setTitle} setIseditId={setIseditId} cards={cards} />
+        <Card
+          key={item.id}
+          item={item}
+          setCards={setCards}
+          setSubtitle={setSubtitle}
+          setTitle={setTitle}
+          setIseditId={setIseditId}
+          cards={cards}
+        />
       ))}
     </>
   );

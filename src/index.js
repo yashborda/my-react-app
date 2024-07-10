@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
+import HookForm from "./components/Form";
 
 ReactDOM.render(
   <>
-    <App />
+    <HookForm />
   </>,
   document.getElementById("root")
 );

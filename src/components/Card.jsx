@@ -1,4 +1,6 @@
 import React from "react";
+import Button from "@mui/material/Button";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 function Card({ item, setCards, setSubtitle, setTitle, setIseditId, cards }) {
   console.log(cards, "cards");
@@ -11,17 +13,24 @@ function Card({ item, setCards, setSubtitle, setTitle, setIseditId, cards }) {
     setIseditId(item.id);
     setSubtitle(item.subtitle);
     setTitle(item.name);
-}
+  };
 
   return (
     <div className="card">
       <div style={{ textAlign: "end" }}>
-        <button className="btn" onClick={handleEdit}>
+        <Button variant="contained" color="secondary" onClick={handleEdit}>
           Edit
-        </button>
-        <button style={{ marginLeft: "10px"}} className="btn btn-danger" onClick={handleDelete}>
+        </Button>
+
+        <Button
+          style={{ marginLeft: "10px" }}
+          variant="contained"
+          color="error"
+          onClick={handleDelete}
+          startIcon={<DeleteIcon />}
+        >
           Delete
-        </button>
+        </Button>
       </div>
       <div className="card-body">
         <h5 className="card-title">{item.name}</h5>

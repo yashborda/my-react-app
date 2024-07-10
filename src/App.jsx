@@ -1,26 +1,12 @@
 import React, { useState } from "react";
+import Button from "@mui/material/Button";
+import SendIcon from "@mui/icons-material/Send";
 import Header from "./components/Header";
-import * as List from "./components/List";
 import Card from "./components/Card";
+import TextField from "@mui/material/TextField";
 
 function App() {
-  const card = [
-    {
-      id: 1,
-      name: "Card Title 1",
-      subtitle: "Card Subtitle 1",
-    },
-    {
-      id: 2,
-      name: "Card Title 2",
-      subtitle: "Card Subtitle 2",
-    },
-    {
-      id: 3,
-      name: "Card Title 3",
-      subtitle: "Card Subtitle 3",
-    },
-  ];
+  const card = [];
   const [cards, setCards] = useState(card);
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
@@ -49,37 +35,39 @@ function App() {
   return (
     <>
       <Header />
-      <h1>Hello, yash</h1>
-      <List.ListTitle />
-      <List.List />
-
       <div>
-        <input
+        <TextField
           name="title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          type="text"
-          className="form-control"
-          required
-        />{" "}
+          id="title"
+          label="Title"
+          variant="outlined"
+        />
         <br />
-        <input
+        <br />
+        <TextField
           name="subtitle"
           value={subtitle}
           onChange={(e) => setSubtitle(e.target.value)}
-          type="text"
-          className="form-control"
-          required
-        />{" "}
+          id="subtitle"
+          label="Sub Title"
+          variant="outlined"
+        />
+        <br />
         <br />
         {iseditId ? (
-          <button className="btn" type="submit" onClick={handelUpdate}>
-            Update
-          </button>
+          <Button variant="contained" color="success" onClick={handelUpdate}>
+            update
+          </Button>
         ) : (
-          <button className="btn" type="submit" onClick={handelSubmit}>
+          <Button
+            variant="contained"
+            endIcon={<SendIcon />}
+            onClick={handelSubmit}
+          >
             Add
-          </button>
+          </Button>
         )}
       </div>
       <br />
